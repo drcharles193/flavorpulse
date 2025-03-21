@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FileText, Dna, Microscope, ChevronRight, User, Settings, LogOut } from 'lucide-react';
+import { FileText, Dna, Microscope, ChevronRight, User, Settings, Utensils, Camera } from 'lucide-react';
 import GlassmorphicCard from '@/components/ui/GlassmorphicCard';
 import AnimatedButton from '@/components/ui/AnimatedButton';
 import FadeInSection from '@/components/ui/FadeInSection';
