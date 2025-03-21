@@ -3,6 +3,7 @@ import React from 'react';
 import FadeInSection from '../ui/FadeInSection';
 import GlassmorphicCard from '../ui/GlassmorphicCard';
 import { Dna, Microscope, FileText, Utensils, Camera, BarChart3 } from 'lucide-react';
+import { GlowingEffect } from '../ui/glowing-effect';
 
 const features = [
   {
@@ -59,15 +60,25 @@ const Features = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <FadeInSection key={index} delay={feature.delay} direction="up">
-              <GlassmorphicCard className="h-full" hoverEffect borderEffect>
-                <div className="flex flex-col h-full">
-                  <div className="mb-4 p-3 rounded-lg bg-primary/10 w-fit">
-                    {feature.icon}
+              <div className="relative h-full">
+                <GlassmorphicCard className="h-full" hoverEffect borderEffect>
+                  <GlowingEffect 
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                    borderWidth={2}
+                  />
+                  <div className="flex flex-col h-full">
+                    <div className="mb-4 p-3 rounded-lg bg-primary/10 w-fit">
+                      {feature.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                    <p className="text-muted-foreground">{feature.description}</p>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </div>
-              </GlassmorphicCard>
+                </GlassmorphicCard>
+              </div>
             </FadeInSection>
           ))}
         </div>
